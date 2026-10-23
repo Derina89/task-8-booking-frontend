@@ -1,5 +1,7 @@
+
 import { type FormEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { API_URL } from '../services/api'
 
 function Register() {
   const [name, setName] = useState('')
@@ -17,7 +19,7 @@ function Register() {
     setLoading(true)
 
     try {
-      const response = await fetch('http://localhost:3000/api/register', {
+      const response = await fetch(`${API_URL}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +53,6 @@ function Register() {
   return (
     <main className="page-container">
       <section className="auth-card">
-
         <div className="page-heading">
           <span>CREATE ACCOUNT</span>
           <h1>Join BookEase</h1>
@@ -61,7 +62,6 @@ function Register() {
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
-
           <label>
             Full Name
             <input
@@ -107,14 +107,12 @@ function Register() {
           >
             {loading ? 'Creating account...' : 'Create Account'}
           </button>
-
         </form>
 
         <p className="auth-footer">
           Already have an account?{' '}
           <Link to="/login">Login</Link>
         </p>
-
       </section>
     </main>
   )
