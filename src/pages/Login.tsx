@@ -1,6 +1,8 @@
+
 import { type FormEvent, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { API_URL } from '../services/api'
+
 function Login() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -34,6 +36,8 @@ function Login() {
         throw new Error(data.message || 'Login failed')
       }
 
+      window.dispatchEvent(new Event('auth-change'))
+
       navigate('/services')
     } catch (err) {
       setError(
@@ -49,17 +53,13 @@ function Login() {
   return (
     <main className="page-container">
       <section className="auth-card">
-
         <div className="page-heading">
           <span>WELCOME BACK</span>
           <h1>Login to BookEase</h1>
-          <p>
-            Sign in to continue with your booking.
-          </p>
+          <p>Sign in to continue with your booking.</p>
         </div>
 
         <form className="auth-form" onSubmit={handleSubmit}>
-
           <label>
             Email
             <input
@@ -93,18 +93,15 @@ function Login() {
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
-
         </form>
 
         <p className="auth-footer">
           Don't have an account?{' '}
           <Link to="/register">Create an account</Link>
         </p>
-
       </section>
     </main>
   )
 }
 
 export default Login
-
