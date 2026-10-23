@@ -352,3 +352,83 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* Navbar authentication links and Logout button */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9d1d9;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 15px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(99, 102, 241, 0.12);
+  border-color: #6366f1;
+}
+
+/* Logout button */
+
+.nav-links button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  background: #6366f1;
+  border: 1px solid #6366f1;
+  border-radius: 8px;
+  padding: 9px 17px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-links button:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  transform: translateY(-1px);
+}
+
+/* Login and Register links */
+
+.nav-links a[href="/login"],
+.nav-links a[href="/register"] {
+  color: #22d3ee;
+  border-color: rgba(34, 211, 238, 0.35);
+}
+
+.nav-links a[href="/login"]:hover,
+.nav-links a[href="/register"]:hover {
+  color: #ffffff;
+  background: rgba(34, 211, 238, 0.12);
+  border-color: #22d3ee;
+}
+
+/* Mobile navbar */
+
+@media (max-width: 700px) {
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
