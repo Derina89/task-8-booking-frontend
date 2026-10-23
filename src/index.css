@@ -520,3 +520,70 @@ a {
     letter-spacing: -1px;
   }
 }
+
+/* Make the date picker calendar icon visible on dark backgrounds */
+
+.auth-form input[type="date"] {
+  color-scheme: dark;
+  color: #f0f6fc;
+  background: #0d1117;
+}
+
+.auth-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.auth-form input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+/* BookEase Booking Form - Consistent Dark Theme */
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  background-color: #0d1117;
+  color: #f0f6fc;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.booking-form select {
+  cursor: pointer;
+}
+
+.booking-form select option {
+  background-color: #161b22;
+  color: #f0f6fc;
+}
+
+.booking-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.booking-form input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Make the date picker calendar icon visible */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 1;
+  cursor: pointer;
+}
